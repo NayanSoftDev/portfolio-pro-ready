@@ -1,0 +1,59 @@
+﻿{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Open Portfolio (Chrome)",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "pwa-msedge",
+      "request": "launch",
+      "name": "Open Portfolio (Edge)",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Open Portfolio (Chrome Mobile Preview)",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--window-size=390,844",
+        "--force-device-scale-factor=2"
+      ]
+    },
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "Start Local Server (Python 8080)",
+      "command": "python -m http.server 8080"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Open localhost:8080 (Chrome)",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "pwa-msedge",
+      "request": "launch",
+      "name": "Open localhost:8080 (Edge)",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Server + Open Chrome",
+      "configurations": [
+        "Start Local Server (Python 8080)",
+        "Open localhost:8080 (Chrome)"
+      ]
+    }
+  ]
+}
